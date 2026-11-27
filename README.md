@@ -19,6 +19,47 @@ Danach Claude Code einmal neu starten.
 /add-agent:add-agent [Beschreibung oder Pfad zu einer Agenten-Datei]
 ```
 
+### Prompt zum Kopieren
+
+Kopier den Prompt in Claude Code und füll die Stellen in `<…>` aus. Je genauer
+die Beschreibung, desto weniger muss der Skill nachfragen.
+
+```
+/add-agent:add-agent Ich brauche einen neuen Agenten für mein Kit <Name des Kits oder Pfad zum Repo>.
+
+Aufgabe: <was der Agent tun soll, in ein bis zwei Sätzen>
+Eingabe: <was er bekommt, z. B. den Plan, geänderte Dateien, einen Text>
+Ergebnis: <was er abliefert, z. B. eine Liste mit Befunden, eine Datei, ein Urteil ok/gesperrt>
+Grenzen: <was er nicht darf, z. B. nichts ändern, nichts committen, keine Webzugriffe>
+Zeitpunkt: <wann er im Ablauf drankommt, z. B. nach dem Developer und vor dem Review>
+
+Schlag mir den besten Platz in der Pipeline vor, zeig mir vor dem Schreiben die
+Vorschau mit allen Dateien und schreib erst nach meinem „go“.
+```
+
+Ein ausgefülltes Beispiel:
+
+```
+/add-agent:add-agent Ich brauche einen neuen Agenten für mein Kit marketing-kit.
+
+Aufgabe: prüft jeden fertigen Post auf Aussagen, die wir nicht belegen können.
+Eingabe: den Text des Posts und die Faktenliste der Marke.
+Ergebnis: je Aussage belegt / nicht belegt, mit Zitat aus der Faktenliste.
+Grenzen: ändert den Post nicht und schlägt keine Formulierungen vor.
+Zeitpunkt: nach dem Texter und vor der Freigabe.
+
+Schlag mir den besten Platz in der Pipeline vor, zeig mir vor dem Schreiben die
+Vorschau mit allen Dateien und schreib erst nach meinem „go“.
+```
+
+Du hast noch keine genaue Idee? Dann reicht auch:
+
+```
+/add-agent:add-agent Schau dir mein Kit <Name des Kits> an und schlag mir vor, welche Agenten in der Pipeline fehlen.
+```
+
+### Ablauf
+
 Der Skill fragt Schritt für Schritt nach und schreibt erst nach deinem „go“:
 
 | Schritt | Was passiert |
