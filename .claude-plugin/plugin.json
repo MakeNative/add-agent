@@ -1,0 +1,9 @@
+{
+  "name": "add-agent",
+  "description": "Fügt einem Agenten-Kit (Claude-Code-Plugin-Repo) einen neuen Agenten hinzu: beschreiben, vorhandene Agenten-Datei importieren oder Lücken vorschlagen lassen. Findet den Platz in der Pipeline, schreibt nach den Konventionen des Kits und verdrahtet Workflows, README und Version.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ceichmueller"
+  },
+  "license": "MIT"
+}
